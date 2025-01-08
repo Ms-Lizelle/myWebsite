@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <script src="https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js"></script>
+  
+</head>
+<body>
+
+  <!-- Navigation Menu -->
+  <div>
+    <button id="hamburgerMenu">☰</button>
+    <div id="menuOptions">
+      <button id="logoutButton">Logout</button>
+    </div>
+  </div>
+
+  <h2>Admin Dashboard</h2>
+
+  <!-- Users Table -->
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Role</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="usersTableBody">
+      <!-- Users will be dynamically added here -->
+    </tbody>
+  </table>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
+    import { getAuth, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
+    import { getFirestore, collection, getDocs, doc, getDoc, updateDoc } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js";
+
+    // Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyCabcTJtOhH2H2L9nXvvkqeBx-qlrvSxQo",
+      authDomain: "mywebsitefirebase-67553.firebaseapp.com",
+      projectId: "mywebsitefirebase-67553",
+      storageBucket: "mywebsitefirebase-67553.firebasestorage.app",
+      messagingSenderId: "618300696515",
+      appId: "1:618300696515:web:444b005cc0642acc6cff76",
+      measurementId: "G-K4XP879J0P"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth();
+    const firestore = getFirestore();
+
+    const hamburgerMenu = document.getElementById("hamburgerMenu");
+    const menuOptions = document.getElementById("menuOptions");
+    const logoutButton = document.getElementById("logoutButton");
+
+    // Toggle menu visibility
+    ham
