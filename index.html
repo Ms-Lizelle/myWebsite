@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Login</title>
 </head>
 <body>
@@ -15,7 +15,7 @@
     </form>
 
     <h2>Don't have an account?</h2>
-    <a href="register.html">Register Here</a>
+    <a href="templates/register.html">Register Here</a>
 
     <!-- Firebase Script -->
     <script type="module">
@@ -54,7 +54,7 @@
                 if (user.emailVerified) {
                     console.log("Login successful!");
                     // Redirect to a new page (e.g., dashboard or homepage)
-                    window.location.href = "userD.html"; // Modify as needed
+                    window.location.href = "templates/userD.html"; // Modify as needed
                 } else {
                     console.log("Email not verified. Please verify your email.");
                     alert("Please verify your email.");
